@@ -11,9 +11,7 @@ module.exports = {
     "plugins": [
         require('stylelint')('./stylelint.config.js'),
         require('tailwindcss'),
-        require('autoprefixer')({
-            "browsers": ['last 4 versions']
-        }),
+        require('autoprefixer'),
         ...process.env.NODE_ENV === 'production' ? [purgecss, cssnano] : []
     ]
 }
