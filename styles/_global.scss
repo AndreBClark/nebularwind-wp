@@ -26,3 +26,18 @@ h6 {
 .wrapper {
     @apply mx-auto;
 }
+
+header {
+    @apply h-120 text-white font-headingone;
+    background-image: url('https://source.unsplash.com/featured/?fitness');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+}
+
+.nav-main {
+    @apply my-auto;
+    & ul {
+        @apply flex;
+    }
+}
