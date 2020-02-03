@@ -12195,7 +12195,8 @@ h6 {
   font-size: 1rem;
 }
 
-.content-wrapper {
+.content-wrapper,
+.wrapper {
   margin-left: auto;
   margin-right: auto;
 }
