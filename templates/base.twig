@@ -9,10 +9,10 @@
 {% endblock %}
 
 	<body class="{{body_class}} h-screen bg-gray-800 flex flex-col" data-template="base.twig">
-		<a class="skip-link screen-reader-text" href="#content">{{ _e( 'Skip to content') }}</a>
-		<header class="header" >
+		{# <a class="skip-link screen-reader-text" href="#content">{{ _e( 'Skip to content') }}</a> #}
+		<header class="header">
 			{% block header %}
-				<div class="wrapper">
+				<div class="wrapper container">
 					<h1 class="hdr-logo" role="banner">
 						<a class="hdr-logo-link" href="{{site.url}}" rel="home">{{site.name}}</a>
 					</h1>
@@ -23,7 +23,7 @@
 			{% endblock %}
 		</header>
 
-		<section id="content" role="main" class="content-wrapper container">
+		<main id="content" class="content-wrapper container">
 			{% if title %}<h1>{{title}}</h1>{% endif %}
 			<div class="wrapper {{sidebar_class}}">
 				{% block content %}
@@ -35,10 +35,10 @@
 					{{sidebar}}
 				</aside>
 			{% endif %}
-		</section>
+		</main>
 
 		{% block footer %}
-			<footer id="footer" class="mt-auto mx-auto">
+			<footer id="footer" class="mt-auto block bg-pink-500">
 				{% include 'footer.twig' %}
 			</footer>
 			{{ function('wp_footer') }}
