@@ -10,7 +10,7 @@ const cssnano = require('cssnano')('cssnano-advanced-preset');
 module.exports = {
     "plugins": [
         require('stylelint')('./stylelint.config.js'),
-        require('tailwindcss'),
+        require('tailwindcss')('./tailwind.config.js'),
         require('autoprefixer'),
         ...process.env.NODE_ENV === 'production' ? [purgecss, cssnano] : []
     ]

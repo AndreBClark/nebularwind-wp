@@ -13,8 +13,10 @@
     "scripts": {
         "start": "gulp dev --gulpfile ./config/gulpfile.babel.js",
         "build": "gulp build --gulpfile ./config/gulpfile.babel.js",
-        "format-twig": "prettier --write ./templates/**/*.twig",
-        "format-css": "prettier --write ./**/*/{css,scss}"
+        "watch": "gulp watch --gulpfile ./config/gulpfile.babel.js",
+        "f-twig": "prettier --write ./templates/**/*.twig",
+        "f-css": "prettier --write ./styles/**/*.{css,scss}",
+        "format": "npm run f-css && npm run f-twig"
     },
     "repository": {
         "type": "git",

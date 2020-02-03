@@ -5,10 +5,10 @@ import rename from 'gulp-rename';
 import postcss from 'gulp-postcss';
 import sassGlob from 'gulp-sass-glob';
 const styles = {
-    entry: ['../styles/**/*.css', '../styles/**/*.scss'],
-    source: '../styles/entry.scss',
+    source: ['../styles/**/*.css', '../styles/**/*.scss'],
+    entry: '../styles/entry.scss',
     destination: '../css',
-    filename: 'wp.min.css'
+    filename: 'wp'
 }
 
 export function dev() {
@@ -16,7 +16,10 @@ export function dev() {
         .pipe(sassGlob())
         .pipe(sass().on('error', sass.logError))
         .pipe(postcss())
-        .pipe(rename(styles.filename))
+        .pipe(rename({
+            basename: styles.filename,
+            extname: ".css"
+        }))
         .pipe(gulp.dest(styles.destination))
 }
 
@@ -26,7 +29,11 @@ export function build() {
         .pipe(sass().on('error', sass.logError))
         .pipe(postcss())
         .pipe(cssnano())
-        .pipe(rename(styles.filename))
+        .pipe(rename({
+            basename: styles.filename,
+            suffix: ".min",
+            extname: ".css"
+        }))
         .pipe(gulp.dest(styles.destination))
 }
 export function watch() {
