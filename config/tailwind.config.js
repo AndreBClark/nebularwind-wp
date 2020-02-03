@@ -3,6 +3,10 @@ const darken = require('polished/lib/color/darken');
 module.exports = {
     theme: {
         extend: {
+            fontFamily: {
+                headingone: "Poppins",
+                headingtwo: "Montserrat"
+            },
             spacing: {
                 '72': '18rem',
                 '84': '21rem',
