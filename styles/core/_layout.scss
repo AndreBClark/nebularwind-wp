@@ -1,0 +1,18 @@
+body {
+    @apply h-screen flex flex-col;
+}
+
+header {
+    @apply bg-indigo-500 text-center;
+    & h1 {
+        @apply my-auto;
+    }
+}
+
+main {
+    @apply py-5;
+}
+
+footer {
+    @apply mt-auto text-center bg-indigo-500 p-4;
+}
