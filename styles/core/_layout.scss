@@ -3,7 +3,7 @@ body {
 }
 
 header {
-    @apply bg-indigo-500 text-center;
+    @apply text-center;
     & h1 {
         @apply my-auto;
     }
@@ -14,5 +14,5 @@ main {
 }
 
 footer {
-    @apply mt-auto text-center bg-indigo-500 p-4;
+    @apply mt-auto text-center p-4;
 }

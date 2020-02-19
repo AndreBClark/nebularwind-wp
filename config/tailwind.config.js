@@ -4,7 +4,7 @@ module.exports = {
     theme: {
         extend: {
             fontFamily: {
-                headingone: "Poppins",
+                headingone: "Lato",
                 headingtwo: "Montserrat"
             },
             spacing: {
@@ -15,6 +15,7 @@ module.exports = {
                 '120': '30rem'
             },
             colors: {
+                primary: "#bc2e7c",
                 deeppurple: {
                     900: darken(.25, "#44337a"),
                     800: darken(.225, "#44337a"),
