@@ -3,9 +3,15 @@ const darken = require('polished/lib/color/darken');
 module.exports = {
     theme: {
         extend: {
+            screens: {
+                '2xl': '1680px'
+            },
+            container: {
+                center: true,
+            },
             fontFamily: {
-                headingone: "Lato",
-                headingtwo: "Montserrat"
+                headingone: "'Inter var'",
+                headingtwo: "'Inter var'"
             },
             spacing: {
                 '72': '18rem',

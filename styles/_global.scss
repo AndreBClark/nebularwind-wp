@@ -1,11 +1,31 @@
-.content-wrapper,
-.wrapper {
-    @apply mx-auto;
+@font-face {
+    font-family: "Inter var";
+    font-weight: 100 900;
+    /* stylelint-disable-line font-weight-notation */
+    font-style: normal;
+    font-display: swap;
+    src: url(../assets/fonts/inter/Inter-upright-var.woff2) format("woff2");
+}
+
+@font-face {
+    font-family: "Inter var";
+    font-weight: 100 900;
+    /* stylelint-disable-line font-weight-notation */
+    font-style: italic;
+    font-display: swap;
+    src: url(../assets/fonts/inter/Inter-italic-var.woff2) format("woff2");
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+@supports ( font-variation-settings: normal) {
+    body {
+        font-family: "Inter var", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;
+    }
 }
 
 .nav-main {
-    @apply font-headingtwo font-thin uppercase my-auto;
-    & ul {
-        @apply flex max-w-3xl justify-between;
-    }
+    @apply uppercase my-auto flex justify-between w-96 font-semibold text-sm;
 }
