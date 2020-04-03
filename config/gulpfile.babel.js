@@ -7,8 +7,8 @@ import sassGlob from 'gulp-sass-glob';
 const styles = {
     source: ['../styles/**/*.css', '../styles/**/*.scss'],
     entry: '../styles/entry.scss',
-    destination: '../css',
-    filename: 'wp'
+    destination: '../',
+    filename: 'style'
 }
 
 export function dev() {
@@ -31,7 +31,6 @@ export function build() {
         .pipe(cssnano())
         .pipe(rename({
             basename: styles.filename,
-            suffix: ".min",
             extname: ".css"
         }))
         .pipe(gulp.dest(styles.destination))
