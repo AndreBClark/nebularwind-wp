@@ -68,7 +68,7 @@
         "prettier-eslint-cli": "^5.0.0",
         "purgecss-with-wordpress": "^1.1.0",
         "sass": "^1.25.0",
-        "stylelint": "^13.0.0",
+        "stylelint": "^13.2.1",
         "stylelint-config-recommended": "^3.0.0",
         "stylelint-prettier": "^1.1.2",
         "tailwindcss": "^1.1.4"
@@ -80,6 +80,6 @@
     },
     "homepage": "https://github.com/AndreBClark/nebularwind-wp#readme",
     "dependencies": {
-        "prettier-plugin-twig-melody": "^0.3.7"
+        "prettier-plugin-twig-melody": "^0.4.2"
     }
 }
