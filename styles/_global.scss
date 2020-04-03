@@ -1,31 +1,34 @@
 @font-face {
-    font-family: "Inter var";
+    font-family: 'Inter var';
     font-weight: 100 900;
     /* stylelint-disable-line font-weight-notation */
     font-style: normal;
     font-display: swap;
-    src: url(../assets/fonts/inter/Inter-upright-var.woff2) format("woff2");
+    src: url(../assets/fonts/inter/Inter-upright-var.woff2) format('woff2');
 }
 
 @font-face {
-    font-family: "Inter var";
+    font-family: 'Inter var';
     font-weight: 100 900;
     /* stylelint-disable-line font-weight-notation */
     font-style: italic;
     font-display: swap;
-    src: url(../assets/fonts/inter/Inter-italic-var.woff2) format("woff2");
+    src: url(../assets/fonts/inter/Inter-italic-var.woff2) format('woff2');
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, sans-serif;
 }
 
-@supports ( font-variation-settings: normal) {
+@supports (font-variation-settings: normal) {
     body {
-        font-family: "Inter var", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;
+        font-family: 'Inter var', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, sans-serif;
     }
 }
 
 .nav-main {
-    @apply uppercase my-auto flex justify-between w-96 font-semibold text-sm;
+    @apply uppercase my-auto justify-between w-96 font-semibold text-sm;
+    & a:hover {
+        @apply text-primary;
+    }
 }
