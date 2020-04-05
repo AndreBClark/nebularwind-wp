@@ -80,6 +80,7 @@
     },
     "homepage": "https://github.com/AndreBClark/nebularwind-wp#readme",
     "dependencies": {
+        "alpinejs": "^2.2.5",
         "prettier-plugin-twig-melody": "^0.4.2"
     }
 }
