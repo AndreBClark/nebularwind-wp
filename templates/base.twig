@@ -8,13 +8,13 @@
 
     <body class="{{ body_class }} h-screen flex flex-col"
         data-template="base.twig">
-        {% include './layout/header.twig'}
-        <main id="content" class="container px-4 content-wrapper">
+        {% include './layout/header.twig' %}
+        <main id="content" class="content-wrapper">
             {% if title %}
                 <h1>
                     {{ title }}
                 </h1>
-            {% endif %}
+            {% endif %}               
             <div class="wrapper {{ sidebar_class }}">
                 {% block content %}
                     Sorry, no content
@@ -28,7 +28,7 @@
         </main>
 
         {% block footer %}
-            <footer id="footer" class="block mt-auto bg-pink-500">
+            <footer id="footer" class="block mt-auto text-white bg-gray-900">
                 {% include 'footer.twig' %}
             </footer>
             {{ function('wp_footer') }}
