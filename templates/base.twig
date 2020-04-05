@@ -56,26 +56,17 @@
                         </a>
                     </div>
                 </div>
-                    <div class="flex-grow block w-full lg:flex lg:items-center lg:w-auto">
-                        <div class="text-sm lg:flex-grow">
-                            <a href="#responsive-header"
-                                class="block mt-4 mr-4 text-teal-200 lg:inline-block lg:mt-0 hover:text-white">
-                                Docs
-                            </a>
-                            <a href="#responsive-header"
-                                class="block mt-4 mr-4 text-teal-200 lg:inline-block lg:mt-0 hover:text-white">
-                                Examples
-                            </a>
-                            <a href="#responsive-header"
-                                class="block mt-4 text-teal-200 lg:inline-block lg:mt-0 hover:text-white">
-                                Blog
-                            </a>
-                        </div>
-                        <div>
-                            <a href="#"
-                                class="inline-block px-4 py-2 mt-4 text-sm leading-none text-white border border-white rounded hover:border-transparent hover:text-teal-500 hover:bg-white lg:mt-0">Download</a>
-                        </div>
+                <div class="flex-grow block w-full lg:flex lg:items-center lg:w-auto">
+                    <div class="text-sm lg:flex-grow">
+                        {% include 'menu.twig' with {
+                            items: menu.get_items
+                        } %}
                     </div>
+                    <div>
+                        <a href="#"
+                            class="inline-block px-4 py-2 mt-4 text-sm leading-none text-white border border-white rounded hover:border-transparent hover:text-teal-500 hover:bg-white lg:mt-0">Download</a>
+                    </div>
+                </div>
             {% endblock %}
         </header>
 
