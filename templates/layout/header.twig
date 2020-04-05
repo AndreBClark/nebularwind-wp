@@ -1,0 +1,76 @@
+<header class="relative header" x-data="{ open: false }">
+    {% block header %}
+        <div class="hidden text-white top-bar bg-primary">
+            <div class="container py-2 mx-auto text-left mw-screen">
+                <small class="flex justify-between">
+                    <a href="tel:(866) 830-3460"
+                        class="hidden tooltip tooltipstered lg:inline">
+                        <i class="icon-phone"></i>
+                        <span>(866) 830-3460</span>
+                    </a>
+                    <p class="w-full font-semibold text-center uppercase lg:w-auto">
+                        Free Shipping in the U.S. on all orders over $75
+                    </p>
+                    <p>
+                        <a href="#0" class="hidden">Newsletter</a>
+                    </p>
+                </small>
+            </div>
+        </div>
+        <div class="container flex items-center justify-between px-2 py-4 mx-auto lg:px-0">
+            <div class="block lg:hidden">
+                <button @click="open = true" class="flex items-center px-3 py-2 border-2 rounded text-primary border-primary hover:text-white hover:border-white">
+                    <svg class="w-4 h-4 fill-current"
+                        viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <title>
+                            Menu
+                        </title>
+                        <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+                    </svg>
+                </button>
+            </div>
+            <div class="font-bold uppercase hdr-logo font-headingtwo"
+                role="banner">
+                <a class="hdr-logo-link"
+                    href="{{ site.url }}"
+                    rel="home">
+                    <img src="/wp-content/uploads/2020/03/logo-threpsitogo.png"
+                        class="h-8 lg:h-12" />
+                    <span class="sr-only">{{ site.name }}</span>
+                </a>
+            </div>
+            <nav id="nav-main"
+                class="hidden nav-main lg:flex"
+                role="navigation">
+                {% include 'menu.twig' with {
+                    items: menu.get_items
+                } %}
+            </nav>
+            <!-- #nav -->
+            <div>
+                <a href="#0"
+                    class="p-2 mt-4 font-bold leading-none text-white border-2 border-solid rounded lg:px-4 lg:py-4 bg-primary border-primary hover:text-primary hover:bg-white lg:my-0">
+                    Buy Now
+                </a>
+            </div>
+        </div>
+        <div x-show="open" @click.away="open = false" class="absolute top-0 w-screen h-screen text-2xl font-bold text-right text-white bg-black">
+            <button @click="open = false">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-16 h-16" viewBox="0 0 40 40">
+                    <line x1="15" y1="15" x2="25" y2="25" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-miterlimit="10"/>
+                    <line x1="25" y1="15" x2="15" y2="25" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-miterlimit="10"/>
+                </svg>
+            </button>
+            <div class="flex flex-col items-center justify-between w-full max-h-screen h-108">
+                {% include 'menu.twig' with {
+                    items: menu.get_items
+                } %}
+                <a href="#"
+                    class="inline-block px-4 py-2 mt-4 text-sm leading-none text-white border border-white rounded hover:border-transparent hover:text-primary hover:bg-white lg:mt-0">
+                    Buy Now
+                </a>
+            </div>
+        </div>
+    {% endblock %}
+</header>
