@@ -16,3 +16,13 @@ main {
 footer {
     @apply mt-auto text-center p-4;
 }
+
+.btn {
+    @apply inline-block px-4 py-2 mt-4 text-sm leading-none text-white border border-white rounded hover: border-transparent hover: text-primary hover: bg-white lg: ;
+    &:hover {
+        @apply border-transparent text-primary bg-white;
+    }
+    @screen lg {
+        @apply mt-0
+    }
+}
