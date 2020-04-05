@@ -1,11 +1,11 @@
-{% extends "base.twig" %}
+{% extends 'base.twig' %}
 
 {% block content %}
-
     {% do action('woocommerce_before_single_product') %}
 
-    <article itemscope itemtype="http://schema.org/Product" class="single-product-details {{ post.class }}">
-
+    <article itemscope
+        itemtype="http://schema.org/Product"
+        class="single-product-details {{ post.class }}">
         <div class="entry-images">
             {% do action('woocommerce_before_single_product_summary') %}
 
@@ -19,11 +19,11 @@
         {% do action('woocommerce_after_single_product_summary') %}
 
         <meta itemprop="url" content="{{ post.link }}" />
-
     </article>
 
-    {% include ["partials/tease-product.twig"] with { products: related_products } %}
+    {% include ['partials/tease-product.twig'] with {
+        products: related_products
+    } %}
 
     {% do action('woocommerce_after_single_product') %}
-
-{% endblock  %}
+{% endblock %}

@@ -1,7 +1,6 @@
 {% extends 'base.twig' %}
 
 {% block content %}
-
     {% do action('woocommerce_before_main_content') %}
 
     <div class="before-shop-loop">
@@ -10,11 +9,10 @@
 
     <div class="loop">
         {% for post in products %}
-            {% include ["partials/tease-product.twig"] %}
+            {% include ['partials/tease-product.twig'] %}
         {% endfor %}
     </div>
 
     {% do action('woocommerce_after_shop_loop') %}
     {% do action('woocommerce_after_main_content') %}
-
-{% endblock  %}
+{% endblock %}
