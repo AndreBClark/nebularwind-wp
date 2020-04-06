@@ -1,12 +1,29 @@
 {% extends 'base.twig' %}
 
 {% block content %}
-        <article class="post-type-{{ post.post_type }}" id="post-{{ post.ID }}">
-            <section class="article-content">
-                <div class="article-body">
-                    {{ post.content }}
+    <article class="post-type-{{ post.post_type }}" id="post-{{ post.ID }}">
+        <section class="article-content">
+            <div class="article-body">
+                <div class="w-full min-h-full py-20 h-84" style="background: linear-gradient(135deg,rgb(53,14,71) 0%,rgb(221,17,115) 100%);">
+                    <div class="container text-white">
+                        <h1 class="text-5xl">{{ post.headline }}</h1>
+                        <h3 class="text-2xl">{{ post.subhead }}</h3>
+                        <div class="mt-8">
+                            <a href="{{post.cta_secondary.url}}" class="btn">{{post.cta_secondary.title}}</a>
+                            <a href="{{post.cta_primary.url}}" class="btn">{{post.cta_primary.title}}</a>
+                        </div>
+                    </div>
                 </div>
-            </section>
-        </article>
+                <div class="py-20 text-2xl text-center text-white bg-gray-900 h-84">
+                    <div class="container">
+                    {{ post.stakes }}
+                    </div>
+                </div>
+                <div class="container">
+                {{ post.content }}
+                </div>
+            </div>
+        </section>
+    </article>
     <!-- /content-wrapper -->
 {% endblock %}
