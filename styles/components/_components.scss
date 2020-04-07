@@ -1,0 +1,12 @@
+@import 'footer';
+
+.row {
+    @apply my-auto;
+    min-height: 21rem;
+}
+.min-h-50 {
+    min-height: 50vh;
+}
+.bg-gradient {
+    background: linear-gradient(135deg,rgb(53,14,71) 0%,rgb(221,17,115) 100%);
+}
