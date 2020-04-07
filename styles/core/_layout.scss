@@ -14,7 +14,8 @@ main {
 }
 
 footer {
-    @apply mt-auto text-center p-4;
+    @apply mt-auto text-center p-4 flex justify-center items-center;
+    background-color: #1b1b1b;
 }
 
 .btn {
