@@ -3,9 +3,6 @@ const darken = require('polished/lib/color/darken');
 module.exports = {
     theme: {
         extend: {
-            screens: {
-
-            },
             container: {
                 center: true,
             },
