@@ -1,0 +1,18 @@
+.footer{
+    &-link {
+    @apply mx-3 text-sm;
+    color: #6b6b6b;
+        &:hover {
+            @apply text-white;
+        }
+    }
+    &-list {
+        @apply py-6
+    }
+    img {
+        @apply inline-block
+    }
+}
+.wrap {
+    @apply pt-4 pb-8 text-center;
+}
