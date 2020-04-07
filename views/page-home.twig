@@ -1,26 +1,59 @@
 {% extends 'base.twig' %}
 
 {% block content %}
+{% set hero = post.meta('hero') %}
+{% set stakes = post.meta('stakes') %}
     <article class="post-type-{{ post.post_type }}" id="post-{{ post.ID }}">
         <section class="article-content">
             <div class="article-body">
-                <div class="w-full min-h-full py-20 h-84" style="background: linear-gradient(135deg,rgb(53,14,71) 0%,rgb(221,17,115) 100%);">
-                    <div class="container text-white">
-                        <h1 class="text-5xl">{{ post.headline }}</h1>
-                        <h3 class="text-2xl">{{ post.subhead }}</h3>
+                <div class="w-full min-h-full py-20 min-h-50 bg-gradient" >
+                    <div class="container my-auto text-white">
+                        <h1 class="text-5xl">{{ hero.headline }}</h1>
+                        <h3 class="text-2xl">{{ hero.subhead }}</h3>
                         <div class="mt-8">
-                            <a href="{{post.cta_secondary.url}}" class="btn">{{post.cta_secondary.title}}</a>
-                            <a href="{{post.cta_primary.url}}" class="btn">{{post.cta_primary.title}}</a>
+                            <a href="{{hero.cta_secondary.url}}" class="btn">
+                                {{hero.cta_secondary.title}}
+                            </a>
+                            <a href="{{hero.cta_primary.url}}" class="btn">
+                                {{hero.cta_primary.title}}
+                            </a>
                         </div>
                     </div>
                 </div>
-                <div class="py-20 text-2xl text-center text-white bg-gray-900 h-84">
-                    <div class="container">
-                    {{ post.stakes }}
-                    </div>
+                {% if post.tagline %}
+                <div class="flex py-20 text-2xl text-center text-white bg-gray-900 row min-h-50">
+                    <div class="container my-auto">{{ post.tagline}}</div>
                 </div>
-                <div class="container">
-                {{ post.content }}
+                {% endif %}
+                    {% if stakes %}
+                    <div class="lg:flex row">
+                        <div class="container pl-20 pr-12 xl:w-1/2">
+                            {{ stakes.paragraph }}
+                        </div>
+                        <div class="container w-1/2">
+                            <img src="{{ Image(stakes.image).src }}" alt="">
+                        </div>
+                    </div>
+                    {% endif %}
+                {% if post.testimonial %}
+                    <div class="container row">
+                        {{ post.testimonial }}
+                    </div>
+                {% endif %}
+                <div class="container row">
+                    {{ post.value_proposition}}
+                </div>
+                <div class="container row">
+                    {{ post.guide }}
+                </div>
+                <div class="container row">
+                    {{ post.plan}}
+                </div>
+                <div class="container row">
+                    {{ post.explanatory_paragraph }}
+                </div>
+                <div class="container row">
+                    {{ post.meta('video') }}
                 </div>
             </div>
         </section>
