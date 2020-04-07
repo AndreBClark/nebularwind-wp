@@ -15884,6 +15884,16 @@ footer {
   margin-top: auto;
   text-align: center;
   padding: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #1b1b1b;
 }
 
 .btn {
@@ -15926,7 +15936,7 @@ h1,
 h2,
 .h2 {
   font-size: 1.875rem;
-  font-weight: 300;
+  font-weight: 700;
 }
 
 h3,
@@ -15948,6 +15958,47 @@ h5,
 h6,
 .h6 {
   font-size: 1rem;
+}
+
+.footer-link {
+  margin-left: 0.75rem;
+  margin-right: 0.75rem;
+  font-size: 0.875rem;
+  color: #6b6b6b;
+}
+
+.footer-link:hover {
+  color: #fff;
+}
+
+.footer-list {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+.footer img {
+  display: inline-block;
+}
+
+.wrap {
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+  text-align: center;
+}
+
+.row {
+  margin-top: auto;
+  margin-bottom: auto;
+  min-height: 21rem;
+}
+
+.min-h-50 {
+  min-height: 50vh;
+}
+
+.bg-gradient {
+  background: -o-linear-gradient(315deg, #350e47 0%, #dd1173 100%);
+  background: linear-gradient(135deg, #350e47 0%, #dd1173 100%);
 }
 
 @media (min-width: 640px) {
