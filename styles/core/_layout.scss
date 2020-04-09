@@ -9,9 +9,6 @@ header {
     }
 }
 
-main {
-    @apply py-5;
-}
 
 footer {
     @apply mt-auto text-center p-4 flex justify-center items-center;
@@ -19,7 +16,7 @@ footer {
 }
 
 .btn {
-    @apply inline-block px-4 py-2 text-sm leading-none text-white border border-white text-primary rounded bg-white border-4 font-bold;
+    @apply inline-block px-4 py-2 leading-none text-white border border-white text-primary rounded bg-white border-4 font-bold;
     &:hover {
         @apply bg-transparent text-white border-white;
     }
@@ -28,4 +25,7 @@ footer {
     }
 }
 
-.hero {}
+.bg-hero {
+        content: '';
+        @apply absolute top-0 h-full w-full bg-cover;
+}

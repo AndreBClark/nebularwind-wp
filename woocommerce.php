@@ -21,8 +21,8 @@ if ( is_singular( 'product' ) ) {
 
     // Restore the context and loop back to the main query loop.
     wp_reset_postdata();
-
-    Timber::render( 'template/woo/single-product.twig', $context );
+    add_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20 );
+    Timber::render( 'views/woo/single-product.twig', $context );
 } else {
     $posts = Timber::get_posts();
     $context['products'] = $posts;
@@ -33,6 +33,5 @@ if ( is_singular( 'product' ) ) {
         $context['category'] = get_term( $term_id, 'product_cat' );
         $context['title'] = single_term_title( '', false );
     }
-
-    Timber::render( 'template/woo/archive.twig', $context );
+    Timber::render( 'views/woo/archive.twig', $context );
 }

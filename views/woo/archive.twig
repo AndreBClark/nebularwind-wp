@@ -1,0 +1,21 @@
+{% extends 'base.twig' %}
+
+{% block content %}
+
+<div class="bg-primary">
+    <div class="container p-4 text-white uppercase before-shop-loop">
+            {{ function('woocommerce_breadcrumb')}}
+    </div>
+</div>
+
+
+    <div class="container flex loop">
+        {% for post in products %}
+            {% include ["views/woo/partials/tease-product.twig"] %}
+        {% endfor %}
+    </div>
+
+    {% do action('woocommerce_after_shop_loop') %}
+    {% do action('woocommerce_after_main_content') %}
+
+{% endblock  %}

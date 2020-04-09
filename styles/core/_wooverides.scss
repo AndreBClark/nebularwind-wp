@@ -1,0 +1,5 @@
+.woocommerce nav.woocommerce-breadcrumb, 
+.woocommerce .woocommerce-breadcrumb a,  {
+    color: white !important;
+    @apply font-bold text-3xl mb-0;
+}

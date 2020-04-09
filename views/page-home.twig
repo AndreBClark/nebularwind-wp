@@ -1,21 +1,23 @@
 {% extends 'base.twig' %}
 
 {% block content %}
-{% set hero = post.meta('hero') %}
+{% set header = post.meta('header') %}
 {% set stakes = post.meta('stakes') %}
+{% set plan = post.meta('plan') %}
     <article class="post-type-{{ post.post_type }}" id="post-{{ post.ID }}">
         <section class="article-content">
             <div class="article-body">
-                <div class="w-full min-h-full py-20 min-h-50 bg-gradient" >
-                    <div class="container my-auto text-white">
-                        <h1 class="text-5xl">{{ hero.headline }}</h1>
-                        <h3 class="text-2xl">{{ hero.subhead }}</h3>
+                <div class="relative flex items-end w-full max-h-screen py-20 h-180 bg-gradient">
+                    <div class="opacity-50 bg-hero blend-multiply" style="background-image: url('{{Image(header.background_image).src }}')"></div>
+                    <div class="container z-10 text-white">
+                        <h1 class="uppercase text-7xl">{{ header.headline }}</h1>
+                        <h2 class="text-2xl">{{ header.subhead }}</h2>
                         <div class="mt-8">
-                            <a href="{{hero.cta_secondary.url}}" class="btn">
-                                {{hero.cta_secondary.title}}
+                            <a href="{{header.cta_secondary.url}}" class="btn">
+                                {{header.cta_secondary.title}}
                             </a>
-                            <a href="{{hero.cta_primary.url}}" class="btn">
-                                {{hero.cta_primary.title}}
+                            <a href="{{header.cta_primary.url}}" class="btn">
+                                {{header.cta_primary.title}}
                             </a>
                         </div>
                     </div>
@@ -27,7 +29,7 @@
                 {% endif %}
                     {% if stakes %}
                     <div class="lg:flex row">
-                        <div class="container pl-20 pr-12 xl:w-1/2">
+                        <div class="container p-20 xl:w-1/2">
                             {{ stakes.paragraph }}
                         </div>
                         <div class="container w-1/2">
@@ -36,23 +38,56 @@
                     </div>
                     {% endif %}
                 {% if post.testimonial %}
-                    <div class="container row">
+                    <div class="container py-20 row">
                         {{ post.testimonial }}
                     </div>
                 {% endif %}
-                <div class="container row">
+                <div class="flex py-20 text-2xl text-center text-white bg-secondary row min-h-50">
+                    <div class="container my-auto">
                     {{ post.value_proposition}}
+                    </div>
                 </div>
-                <div class="container row">
-                    {{ post.guide }}
+                <div class="flex py-20 text-2xl text-white bg-primary row min-h-50">
+                    <div class="container flex justify-between my-auto">
+                        <h3 class="flex-1 mx-12 text-center font-6xl">We Understand</h3>
+                        <div class="">
+                        {{ post.guide }}
+                        </div>
+                    </div>
                 </div>
-                <div class="container row">
-                    {{ post.plan}}
+                <div class="py-20 text-white bg-gradient">
+                    <h3 class="pb-20 text-4xl text-center">{{plan.heading}}</h3>
+                    <div class="container flex justify-around w-full font-bold text-center uppercase row">
+                        <div>
+                            <div class="w-32 p-4 mx-auto mb-4 text-6xl font-bold text-center text-white rounded-full bg-primary">1</div>
+                            {{ plan.step_1}}
+                        </div>
+                        <div>
+                            <div class="w-32 p-4 mx-auto mb-4 text-6xl font-bold text-center text-white rounded-full bg-primary">2</div>
+                            {{ plan.step_2}}
+                        </div>
+                        <div>
+                            <div class="w-32 p-4 mx-auto mb-4 text-6xl font-bold text-center text-white rounded-full bg-primary">3</div>
+                            {{ plan.step_3}}
+                        </div>
+                        {% if plan.step_4 %}
+                        <div>
+                            <div class="w-32 p-4 mx-auto mb-4 text-6xl font-bold text-center text-white rounded-full bg-primary">4</div>
+                            {{ plan.step_4}}
+                        </div>
+                        {% endif %}
+                    </div>
                 </div>
-                <div class="container row">
-                    {{ post.explanatory_paragraph }}
                 </div>
-                <div class="container row">
+                <div class="flex py-20 text-white bg-gray-900 row min-h-50">
+                    <div class="container my-auto">
+                        <h3 class="uppercase">we know you want to be operating at the highest level possible</h3>
+                        <div class="text-2xl">
+                            {{ post.explanatory_paragraph }}
+                        </div>
+                    </div>
+                </div>
+                <div class="container py-20 mx-auto row">
                     {{ post.meta('video') }}
                 </div>
             </div>
