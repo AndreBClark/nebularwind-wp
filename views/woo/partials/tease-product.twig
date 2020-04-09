@@ -16,7 +16,7 @@
             </div>
         {% endif %}
 
-        <div class="media-content">
+        <div class="flex flex-col justify-between media-content h-108">
 
             {% do action('woocommerce_before_shop_loop_item_title') %}
 
@@ -25,7 +25,6 @@
             {% else %}
                 <h3 class="entry-title"><a href="{{ post.link }}">{{ fn('the_title') }}</a></h3>
             {% endif %}
-{{ function('woocommerce_add_to_cart_button')}}
             {% do action( 'woocommerce_after_shop_loop_item_title' ) %}
             {% do action( 'woocommerce_after_shop_loop_item' ) %}
 
