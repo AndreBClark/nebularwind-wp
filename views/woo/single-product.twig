@@ -3,18 +3,21 @@
 {% block content %}
 
     {% do action('woocommerce_before_single_product') %}
-
+<div class="bg-primary">
+    <div class="container p-4 text-white uppercase before-shop-loop">
+            {{ function('woocommerce_breadcrumb')}}
+    </div>
+</div>
     <article itemscope itemtype="http://schema.org/Product" class="single-product-details container {{ post.class }}">
-
+    <div class="flex items-center">
         <div class="entry-images">
             {% do action('woocommerce_before_single_product_summary') %}
-
-            <img src="{{ post.thumbnail.src('shop_single') }}" />
         </div>
 
         <div class="summary entry-summary">
             {% do action('woocommerce_single_product_summary') %}
         </div>
+    </div>
 
         {% do action('woocommerce_after_single_product_summary') %}
 
@@ -22,8 +25,8 @@
 
     </article>
 
-    {% include ["views/woo/partials/tease-product.twig"] with { products: related_products } %}
 
-    {% do action('woocommerce_after_single_product') %}
+
+
 
 {% endblock  %}
