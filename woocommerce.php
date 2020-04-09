@@ -8,7 +8,7 @@ if ( ! class_exists( 'Timber' ) ) {
 
 $context            = Timber::context();
 $context['sidebar'] = Timber::get_widgets( 'shop-sidebar' );
-
+add_filter( 'woocommerce_enqueue_styles', '__return_false');
 if ( is_singular( 'product' ) ) {
     $context['post']    = Timber::get_post();
     $product            = wc_get_product( $context['post']->ID );
