@@ -1,5 +1,10 @@
 .woocommerce nav.woocommerce-breadcrumb, 
 .woocommerce .woocommerce-breadcrumb a,  {
-    color: white !important;
-    @apply font-bold text-3xl mb-0;
+    @apply font-bold text-3xl text-white;
+}
+
+.media-content {
+    .button {
+        @apply bg-secondary block text-white text-center py-4 rounded;
+    }
 }
