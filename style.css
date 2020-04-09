@@ -16328,10 +16328,19 @@ h6,
 
 .woocommerce nav.woocommerce-breadcrumb,
 .woocommerce .woocommerce-breadcrumb a {
-  color: white !important;
   font-weight: 700;
   font-size: 1.875rem;
-  margin-bottom: 0;
+  color: #fff;
+}
+
+.media-content .button {
+  background-color: #350e47;
+  display: block;
+  color: #fff;
+  text-align: center;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border-radius: 0.25rem;
 }
 
 .footer-link {
