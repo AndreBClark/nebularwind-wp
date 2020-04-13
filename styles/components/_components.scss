@@ -12,5 +12,9 @@
 }
 
 .bg-gradient {
-    background: linear-gradient(135deg, rgb(53, 14, 71) 0%, rgb(221, 17, 115) 100%);
+    background: linear-gradient(135deg, rgba(53, 14, 71, 1) -50%, rgba(221, 17, 115, 1) 100%);
+}
+
+.bg-hero {
+    @apply absolute top-0 h-full w-full bg-cover;
 }
