@@ -9,7 +9,6 @@ header {
     }
 }
 
-
 footer {
     @apply mt-auto text-center p-4 flex justify-center items-center;
     background-color: #1b1b1b;
@@ -23,9 +22,4 @@ footer {
     &-lg {
         @apply px-8 py-4
     }
-}
-
-.bg-hero {
-        content: '';
-        @apply absolute top-0 h-full w-full bg-cover;
 }
