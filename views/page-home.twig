@@ -7,9 +7,9 @@
     <article class="post-type-{{ post.post_type }}" id="post-{{ post.ID }}">
         <section class="article-content">
             <div class="article-body">
-                <div class="relative flex items-center w-full max-h-screen bg-gradient h-180">
-                    <div style="background-image: url('{{Image(header.background_image).src }}');" class="bg-cover opacity-50 bg-hero" ></div>
-                    <div class="container text-center text-white">
+                <div class="relative flex items-center w-full max-h-screen h-180" style="background-image: url('{{Image(header.background_image).src }}');">
+                    <div  class="bg-cover opacity-50 bg-gradient bg-hero" ></div>
+                    <div class="container z-10 text-center text-white">
                         <h1 class="uppercase">{{ header.headline }}</h1>
                         <h2>{{ header.subhead }}</h2>
                         <div class="mt-8">
