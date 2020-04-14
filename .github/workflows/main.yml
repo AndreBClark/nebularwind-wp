@@ -41,7 +41,8 @@ jobs:
 
     - name: Build
       run: npm run build
-    
+    - name: Composer
+      run: composer install
     - name: Sync
       uses: AEnterprise/rsync-deploy@v1.0
       env:
