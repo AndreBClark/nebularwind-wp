@@ -29,7 +29,8 @@ jobs:
       run: |
         echo "${{secrets.DEPLOY_KEY}}"
         base64 -d
-        sshpass -p ###### rsync -v 
+        sshpass -p ${{secrets.DEPLOY_KEY}} 
+        rsync -v 
         --delete 
         --recursive 
         --exclude=/.git/ 
