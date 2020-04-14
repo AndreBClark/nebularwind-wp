@@ -7,8 +7,8 @@ module.exports = {
                 center: true,
             },
             fontFamily: {
-                body: "Inter",
-                heading: "Inter",
+                body: ["Inter", '-apple-system', 'BlinkMacSystemFont', "Helvetica Neue", "Helvetica", "sans-serif"],
+                heading: ["Inter", '-apple-system', 'BlinkMacSystemFont', "Helvetica Neue", "Helvetica", "sans-serif"],
             },
             fontSize: {
                 "7xl": '5rem',

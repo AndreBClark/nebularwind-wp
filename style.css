@@ -3904,11 +3904,11 @@ video {
 }
 
 .font-body {
-  font-family: Inter;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, sans-serif;
 }
 
 .font-heading {
-  font-family: Inter;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, sans-serif;
 }
 
 .font-hairline {
@@ -16292,7 +16292,7 @@ h1,
 .h1 {
   font-size: 2.25rem;
   font-weight: 700;
-  font-family: Inter;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, sans-serif;
 }
 
 h2,
@@ -16304,25 +16304,25 @@ h3,
 .h3 {
   font-size: 1.5rem;
   font-weight: 700;
-  font-family: Inter;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, sans-serif;
 }
 
 h4,
 .h4 {
   font-size: 1.25rem;
-  font-family: Inter;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, sans-serif;
 }
 
 h5,
 .h5 {
   font-size: 1.125rem;
-  font-family: Inter;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, sans-serif;
 }
 
 h6,
 .h6 {
   font-size: 1rem;
-  font-family: Inter;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, sans-serif;
 }
 
 .woocommerce nav.woocommerce-breadcrumb,
@@ -19646,11 +19646,11 @@ h6,
   }
 
   .sm\:font-body {
-    font-family: Inter;
+    font-family: Inter, -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, sans-serif;
   }
 
   .sm\:font-heading {
-    font-family: Inter;
+    font-family: Inter, -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, sans-serif;
   }
 
   .sm\:font-hairline {
@@ -35201,11 +35201,11 @@ h6,
   }
 
   .md\:font-body {
-    font-family: Inter;
+    font-family: Inter, -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, sans-serif;
   }
 
   .md\:font-heading {
-    font-family: Inter;
+    font-family: Inter, -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, sans-serif;
   }
 
   .md\:font-hairline {
@@ -50756,11 +50756,11 @@ h6,
   }
 
   .lg\:font-body {
-    font-family: Inter;
+    font-family: Inter, -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, sans-serif;
   }
 
   .lg\:font-heading {
-    font-family: Inter;
+    font-family: Inter, -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, sans-serif;
   }
 
   .lg\:font-hairline {
@@ -66311,11 +66311,11 @@ h6,
   }
 
   .xl\:font-body {
-    font-family: Inter;
+    font-family: Inter, -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, sans-serif;
   }
 
   .xl\:font-heading {
-    font-family: Inter;
+    font-family: Inter, -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, sans-serif;
   }
 
   .xl\:font-hairline {
