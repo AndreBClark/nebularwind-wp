@@ -27,11 +27,11 @@ jobs:
       env:
         dest: 'threpsimyc@server161.web-hosting.com:/home/threpmyc/public_html/wp-content/themes/nebularwind/'
       run: |
-        echo "${{secrets.DEPLOY_KEY}}" > deploy_key
-        chmod 600 ./deploy_key
-        rsync -chav --delete \
-          -e 'ssh -i ./deploy_key -o StrictHostKeyChecking=no' \
-          --exclude /.git/ \
-          --exclude /.github/ \
-          --exclude /node_modules/ \
-          ./ ${{env.dest}}
+        echo "${{secrets.DEPLOY_KEY}}"
+        basee64 -d
+        sshpass -p ###### rsync -v 
+        --delete 
+        --recursive 
+        --exclude=/.git/ 
+        --exclude=.vscode 
+        --exclude=node_modules -e ssh -p 21098 -o StrictHostKeyChecking=no . threpmyc@server161.web-hosting.com:${{env.dest}}
