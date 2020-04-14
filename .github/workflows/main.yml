@@ -7,10 +7,29 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v2
-
+    - name: Cache node modules
+      uses: actions/cache@v1
+      env:
+        cache-name: cache-node-modules
+      with:
+        path: ~/.npm # npm cache files are stored in `~/.npm` on Linux/macOS
+        key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+        restore-keys: |
+          ${{ runner.os }}-build-${{ env.cache-name }}-
+          ${{ runner.os }}-build-
+          ${{ runner.os }}-
+    - name: Get Composer Cache Directory
+      id: composer-cache
+      run: |
+        echo "::set-output name=dir::$(composer config cache-files-dir)"
+    - uses: actions/cache@v1
+      with:
+        path: ${{ steps.composer-cache.outputs.dir }}
+        key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-composer-
     - uses: actions/setup-node@v1.1.0
       with:
         version: 12.x
@@ -19,21 +38,14 @@ jobs:
       run: |
         composer install -o
         npm install
-
-    - name: Build
-      run: npm run build
-    
     - name: Sync
+      uses: AEnterprise/rsync-deploy@v1.0
       env:
-        dest: 'threpsimyc@server161.web-hosting.com:/home/threpmyc/public_html/wp-content/themes/nebularwind/'
-      run: |
-        echo "${{secrets.DEPLOY_KEY}}" > deploy_key
-        chmod 600 ./deploy_key
-        rsync -chav --delete \
-          -e 'ssh -i ./deploy_key -p 21098 -o StrictHostKeyChecking=no' \
-          --exclude /.git/ \
-          --exclude /.github/ \
-          --exclude /node_modules/ \
-          ./ ${{env.dest}}
-
+        DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
+        ARGS: "-e -c -r --delete --exclude /.git/ \ --exclude /.github/ \ --exclude /node_modules/"
+        SERVER_PORT: ${{ secrets.SERVER_PORT }}
+        FOLDER: "./"
+        SERVER_IP: "server161.web-hosting.com"
+        USERNAME: "threpmyc"
+        SERVER_DESTINATION: "/home/threpmyc/public_html/wp-content/themes/nebularwind/"
 
