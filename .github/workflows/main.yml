@@ -28,7 +28,7 @@ jobs:
         dest: 'threpsimyc@server161.web-hosting.com:/home/threpmyc/public_html/wp-content/themes/nebularwind/'
       run: |
         echo "${{secrets.DEPLOY_KEY}}"
-        basee64 -d
+        base64 -d
         sshpass -p ###### rsync -v 
         --delete 
         --recursive 
