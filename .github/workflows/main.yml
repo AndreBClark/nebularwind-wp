@@ -45,7 +45,7 @@ jobs:
         ARGS: "-e -c -r --delete --exclude /.git/ \ --exclude /.github/ \ --exclude /node_modules/"
         SERVER_PORT: ${{ secrets.SERVER_PORT }}
         FOLDER: "./"
-        SERVER_IP: "server161.web-hosting.com"
-        USERNAME: "threpmyc"
-        SERVER_DESTINATION: "/home/threpmyc/public_html/wp-content/themes/nebularwind/"
+        SERVER_IP: ${{ secrets.SERVER_IP }}
+        USERNAME: ${{ secrets.USERNAME }}
+        SERVER_DESTINATION: ${{ secrets.SERVER_DESTINATION }}
 
