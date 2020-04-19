@@ -6,6 +6,13 @@ module.exports = {
             container: {
                 center: true,
             },
+            screens: {
+                "2xl": '1680px',
+            },
+            maxWidth: {
+                '7xl': '80rem',
+                '8xl': '88rem'
+            },
             fontFamily: {
                 body: ["Inter", '-apple-system', 'BlinkMacSystemFont', "Helvetica Neue", "Helvetica", "sans-serif"],
                 heading: ["Inter", '-apple-system', 'BlinkMacSystemFont', "Helvetica Neue", "Helvetica", "sans-serif"],
