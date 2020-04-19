@@ -15,7 +15,7 @@ footer {
 }
 
 .btn {
-    @apply inline-block px-4 py-2 leading-none text-white border border-white text-primary rounded bg-white border-4 font-bold;
+    @apply inline-block px-6 py-4 leading-none text-white border border-white text-primary rounded bg-white border-2 font-bold;
     &:hover {
         @apply bg-transparent text-white border-white;
     }
