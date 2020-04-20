@@ -4,98 +4,100 @@
 {% set header = post.meta('header') %}
 {% set stakes = post.meta('stakes') %}
 {% set plan = post.meta('plan') %}
-    <article class="post-type-{{ post.post_type }}" id="post-{{ post.ID }}">
-        <section class="article-content">
-            <div class="article-body">
-                <div class="relative flex items-center w-full max-h-screen bg-no-repeat bg-cover h-180" style="background-image: url('{{Image(header.background_image).src }}');">
-                    <div  class="bg-cover opacity-25 bg-gradient bg-hero blend-screen" ></div>
-                    <div class="container z-10 text-center text-white">
-                        <h1 class="uppercase">{{ header.headline }}</h1>
-                        <h2>{{ header.subhead }}</h2>
-                        <div class="mt-8">
-                            <a href="{{header.cta_secondary.url}}" class="btn">
-                                {{header.cta_secondary.title}}
-                            </a>
-                            <a href="{{header.cta_primary.url}}" class="btn">
-                                {{header.cta_primary.title}}
-                            </a>
+<article class="post-type-{{ post.post_type }}" id="post-{{ post.ID }}">
+    <section class="article-content">
+        <div class="article-body">
+            <div class="relative flex items-center w-full max-h-screen bg-no-repeat bg-cover h-180" style="background-image: url('{{Image(header.background_image).src }}');">
+                <div  class="bg-cover opacity-25 bg-gradient bg-hero blend-screen" ></div>
+                <div class="container z-10 text-center text-white">
+                    <h1 class="uppercase">{{ header.headline }}</h1>
+                    <h2>{{ header.subhead }}</h2>
+                    <div class="mt-8">
+                        <a href="{{header.cta_secondary.url}}" class="btn">
+                            {{header.cta_secondary.title}}
+                        </a>
+                        <a href="{{header.cta_primary.url}}" class="btn">
+                            {{header.cta_primary.title}}
+                        </a>
+                    </div>
+                </div>
+            </div>
+            {% if post.tagline %}
+            <div class="flex py-20 text-2xl text-center row min-h-50">
+                <div class="container max-w-6xl my-auto font-bold">
+                    {{ post.tagline}}
+                </div>
+            </div>
+            {% endif %}
+                {% if stakes %}
+                <div class="items-center stakes lg:flex row">
+                    <div class="container xl:flex-1">
+                        <img src="{{ Image(stakes.image).src }}" alt="">
+                    </div>
+                    <div class="container xl:flex-1">
+                        <div class="lg:px-48">
+                        {{ stakes.paragraph }}
                         </div>
                     </div>
                 </div>
-                {% if post.tagline %}
-                <div class="flex py-20 text-2xl text-center row min-h-50">
-                    <div class="container max-w-6xl my-auto">{{ post.tagline}}</div>
-                </div>
                 {% endif %}
-                    {% if stakes %}
-                    <div class="items-center stakes lg:flex row">
-                        <div class="container xl:flex-1">
-                            <img src="{{ Image(stakes.image).src }}" alt="">
-                        </div>
-                        <div class="container xl:flex-1">
-                            <div class="lg:px-48">
-                            {{ stakes.paragraph }}
-                            </div>
-                        </div>
+            {% if post.testimonial %}
+                <div class="container py-20 row">
+                    {{ post.testimonial }}
+                </div>
+            {% endif %}
+            <div class="flex py-20 text-2xl text-center row min-h-50">
+                <div class="container my-auto">
+                {{ post.value_proposition}}
+                </div>
+            </div>
+            <div class="flex py-20 text-2xl row min-h-50">
+                <div class="container flex justify-between my-auto">
+                    <h3 class="mx-12 font-bold text-center font-6xl">We Understand</h3>
+                    <div class="flex-1">
+                    {{ post.guide }}
+                    </div>
+                </div>
+            </div>
+            <div class="py-20 text-white bg-gradient">
+                <h3 class="pb-20 text-4xl text-center">{{plan.heading}}</h3>
+                <div class="container flex justify-around w-full font-bold text-center uppercase row">
+                    <div>
+                        <div class="w-32 p-4 mx-auto mb-4 text-6xl font-bold text-center bg-white rounded-full text-primary">1</div>
+                        {{ plan.step_1}}
+                    </div>
+                    <div>
+                        <div class="w-32 p-4 mx-auto mb-4 text-6xl font-bold text-center bg-white rounded-full text-primary">2</div>
+                        {{ plan.step_2}}
+                    </div>
+                    <div>
+                        <div class="w-32 p-4 mx-auto mb-4 text-6xl font-bold text-center bg-white rounded-full text-primary">3</div>
+                        {{ plan.step_3}}
+                    </div>
+                    {% if plan.step_4 %}
+                    <div>
+                        <div class="w-32 p-4 mx-auto mb-4 text-6xl font-bold text-center bg-white rounded-full text-primary">4</div>
+                        {{ plan.step_4}}
                     </div>
                     {% endif %}
-                {% if post.testimonial %}
-                    <div class="container py-20 row">
-                        {{ post.testimonial }}
-                    </div>
-                {% endif %}
-                <div class="flex py-20 text-2xl text-center row min-h-50">
-                    <div class="container my-auto">
-                    {{ post.value_proposition}}
-                    </div>
                 </div>
-                <div class="flex py-20 text-2xl row min-h-50">
-                    <div class="container flex justify-between my-auto">
-                        <h3 class="mx-12 font-bold text-center font-6xl">We Understand</h3>
-                        <div class="flex-1">
-                        {{ post.guide }}
-                        </div>
+            </div>
+            </div>
+            <div class="py-20 row min-h-50">
+                <h2 class="mx-auto font-bold text-center uppercase">we know you want to be operating at the highest level possible</h2>
+                <div class="container justify-between lg:flex">
+                    <div class="py-20 mx-auto video-container">
+                        {{ post.meta('video') }}
                     </div>
-                </div>
-                <div class="py-20 text-white bg-gradient">
-                    <h3 class="pb-20 text-4xl text-center">{{plan.heading}}</h3>
-                    <div class="container flex justify-around w-full font-bold text-center uppercase row">
-                        <div>
-                            <div class="w-32 p-4 mx-auto mb-4 text-6xl font-bold text-center text-white rounded-full bg-primary">1</div>
-                            {{ plan.step_1}}
-                        </div>
-                        <div>
-                            <div class="w-32 p-4 mx-auto mb-4 text-6xl font-bold text-center text-white rounded-full bg-primary">2</div>
-                            {{ plan.step_2}}
-                        </div>
-                        <div>
-                            <div class="w-32 p-4 mx-auto mb-4 text-6xl font-bold text-center text-white rounded-full bg-primary">3</div>
-                            {{ plan.step_3}}
-                        </div>
-                        {% if plan.step_4 %}
-                        <div>
-                            <div class="w-32 p-4 mx-auto mb-4 text-6xl font-bold text-center text-white rounded-full bg-primary">4</div>
-                            {{ plan.step_4}}
-                        </div>
-                        {% endif %}
-                    </div>
-                </div>
-                </div>
-                <div class="py-20 row min-h-50">
-                    <h2 class="mx-auto font-bold text-center uppercase">we know you want to be operating at the highest level possible</h2>
-                    <div class="container justify-between lg:flex">
-                        <div class="py-20 mx-auto video-container">
-                            {{ post.meta('video') }}
-                        </div>
-                        <div class="flex-1 my-auto">
-                            <div class="lg:pl-32">
-                                {{ post.explanatory_paragraph }}
-                            </div>
+                    <div class="flex-1 my-auto">
+                        <div class="lg:pl-32">
+                            {{ post.explanatory_paragraph }}
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
-    </article>
-    <!-- /content-wrapper -->
+        </div>
+    </section>
+</article>
+<!-- /content-wrapper -->
 {% endblock %}
