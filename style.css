@@ -16288,6 +16288,10 @@ footer {
   padding-bottom: 1rem;
 }
 
+.stakes ul {
+  padding-left: 2rem;
+}
+
 h1,
 .h1 {
   font-size: 2.25rem;
